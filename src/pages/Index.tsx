@@ -305,6 +305,41 @@ export default function Index() {
         </div>
       </section>
 
+      {/* ── WHO WE WORK WITH ── */}
+      <section className="relative border-b border-[rgba(212,175,55,0.07)]">
+        <div className="max-w-7xl mx-auto px-6 py-10">
+          <div className="grid md:grid-cols-2 gap-px bg-[rgba(212,175,55,0.05)]">
+
+            {/* Стартапы */}
+            <div className="bg-[#0B0E14] px-8 py-7 flex items-start gap-5 group hover:bg-[rgba(212,175,55,0.02)] transition-colors duration-300">
+              <div className="w-10 h-10 border border-[rgba(212,175,55,0.25)] flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:border-[rgba(212,175,55,0.5)] transition-colors duration-300">
+                <Icon name="Rocket" size={16} className="text-[#D4AF37]" />
+              </div>
+              <div>
+                <div className="font-mono-brand text-[10px] tracking-[0.2em] text-[rgba(212,175,55,0.5)] mb-1">СТАРТАПЫ</div>
+                <p className="text-[rgba(255,255,255,0.55)] text-sm leading-relaxed font-light">
+                  Помогаем заложить правильную архитектурную основу с первого дня — чтобы рост с&nbsp;1&nbsp;000 до&nbsp;1&nbsp;000&nbsp;000 пользователей не требовал полного переписывания системы.
+                </p>
+              </div>
+            </div>
+
+            {/* Высоконагруженные */}
+            <div className="bg-[#0B0E14] px-8 py-7 flex items-start gap-5 group hover:bg-[rgba(0,242,255,0.02)] transition-colors duration-300">
+              <div className="w-10 h-10 border border-[rgba(0,242,255,0.25)] flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:border-[rgba(0,242,255,0.5)] transition-colors duration-300">
+                <Icon name="Layers" size={16} className="text-[#00F2FF]" />
+              </div>
+              <div>
+                <div className="font-mono-brand text-[10px] tracking-[0.2em] text-[rgba(0,242,255,0.5)] mb-1">РАСПРЕДЕЛЁННЫЕ СИСТЕМЫ</div>
+                <p className="text-[rgba(255,255,255,0.55)] text-sm leading-relaxed font-light">
+                  Масштабируем действующие платформы под пиковые нагрузки: финтех, маркетплейсы, стриминг, телеком. Десятки миллионов запросов в сутки — наша норма.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       {/* ── STATS ── */}
       <section ref={statsRef} className="relative border-y border-[rgba(212,175,55,0.07)]">
         <div className="max-w-7xl mx-auto px-6">
@@ -534,7 +569,17 @@ export default function Index() {
             </button>
           </div>
 
-          <div className="mt-16 pt-8 border-t border-[rgba(255,255,255,0.05)] flex flex-col md:flex-row gap-6 justify-center items-center">
+          {/* 152-ФЗ badge */}
+          <div className="mt-10 flex items-center justify-center gap-3">
+            <div className="flex items-center gap-2.5 glass-cyan border border-[rgba(0,242,255,0.12)] px-5 py-2.5">
+              <Icon name="ShieldCheck" size={14} className="text-[#00F2FF]" />
+              <span className="font-mono-brand text-[11px] tracking-[0.12em] text-[rgba(0,242,255,0.7)]">
+                Соответствие 152-ФЗ «О персональных данных»
+              </span>
+            </div>
+          </div>
+
+          <div className="mt-10 pt-8 border-t border-[rgba(255,255,255,0.05)] flex flex-col md:flex-row gap-6 justify-center items-center">
             {[
               { icon: "Mail",   label: "hello@itkarma.io"   },
               { icon: "Phone",  label: "+7 (495) 000-00-00" },

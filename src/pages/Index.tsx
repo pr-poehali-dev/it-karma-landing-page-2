@@ -258,49 +258,110 @@ export default function Index() {
       <section className="relative min-h-screen flex items-center overflow-hidden grid-bg">
         <BgNodes />
 
+        {/* Background image — right half only, strong left vignette for text legibility */}
         <div className="absolute inset-0 z-0">
-          <img src={HERO_IMAGE} alt="Распределённая архитектура" className="w-full h-full object-cover opacity-15"/>
-          <div className="absolute inset-0" style={{background: "linear-gradient(to right, #0B0E14 40%, rgba(11,14,20,0.8) 70%, rgba(11,14,20,0.35) 100%)"}}/>
-          <div className="absolute inset-0" style={{background: "linear-gradient(to top, #0B0E14 0%, transparent 40%)"}}/>
+          <img
+            src={HERO_IMAGE}
+            alt="Распределённая архитектура IT-Karma"
+            className="w-full h-full object-cover object-center"
+            style={{opacity: 0.22}}
+          />
+          {/* Heavy dark veil left → right so text is always legible */}
+          <div className="absolute inset-0" style={{background: "linear-gradient(100deg, #0B0E14 38%, rgba(11,14,20,0.88) 58%, rgba(11,14,20,0.45) 78%, rgba(11,14,20,0.2) 100%)"}}/>
+          {/* Bottom fade */}
+          <div className="absolute inset-0" style={{background: "linear-gradient(to top, #0B0E14 0%, rgba(11,14,20,0.4) 25%, transparent 55%)"}}/>
+          {/* Subtle cyan radial accent top-right */}
+          <div className="absolute top-0 right-0 w-[60vw] h-[70vh]" style={{background: "radial-gradient(ellipse at 80% 20%, rgba(0,242,255,0.04) 0%, transparent 65%)"}}/>
         </div>
 
-        {/* Vertical accent line */}
-        <div className="absolute right-1/3 top-0 bottom-0 w-px hidden xl:block" style={{background: "linear-gradient(to bottom, transparent, rgba(212,175,55,0.08), transparent)"}}/>
+        {/* Vertical accent lines */}
+        <div className="absolute left-[42%] top-0 bottom-0 w-px hidden 2xl:block" style={{background: "linear-gradient(to bottom, transparent, rgba(0,242,255,0.06), transparent)"}}/>
+        <div className="absolute right-[20%] top-0 bottom-0 w-px hidden 2xl:block" style={{background: "linear-gradient(to bottom, transparent, rgba(212,175,55,0.04), transparent)"}}/>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 pt-32 pb-24">
-          <div className="max-w-3xl">
+        {/* Main content — 160pt+ left margin via px-10 xl:px-20 2xl:px-28 */}
+        <div className="relative z-10 w-full max-w-[1440px] mx-auto px-10 xl:px-20 2xl:px-28 pt-40 pb-32">
 
-            <div className="animate-fade-up flex items-center gap-3 mb-8">
-              <div className="node-dot-gold"/>
-              <span className="font-mono-brand text-[11px] tracking-[0.28em] text-[rgba(212,175,55,0.65)] uppercase">
-                ИИ-разработка высоконагруженных систем
-              </span>
-            </div>
+          {/* Eyebrow tag */}
+          <div className="animate-fade-up flex items-center gap-4 mb-10">
+            <div className="node-dot-gold"/>
+            <div className="h-px w-12 bg-[rgba(212,175,55,0.35)]"/>
+            <span className="font-mono-brand text-[10px] tracking-[0.32em] text-[rgba(212,175,55,0.6)] uppercase">
+              ИИ-разработка&nbsp;&nbsp;·&nbsp;&nbsp;Высоконагруженные системы
+            </span>
+          </div>
 
-            <h1 className="animate-fade-up delay-100 leading-[0.93] tracking-[-0.025em] mb-6"
-              style={{fontFamily: "'Montserrat', sans-serif", fontWeight: 900, fontSize: "clamp(2.8rem, 6vw, 5.5rem)"}}>
-              <span className="text-white">Точный</span><br/>
-              <span className="text-white">инжиниринг</span><br/>
-              <span className="text-gold-gradient">высоконагруженных</span><br/>
-              <span className="text-white">систем.</span>
-            </h1>
+          {/* Massive headline — extreme size, tight leading */}
+          <h1
+            className="animate-fade-up delay-100 tracking-[-0.03em] mb-8"
+            style={{
+              fontFamily: "'Montserrat', sans-serif",
+              fontWeight: 900,
+              fontSize: "clamp(3.4rem, 7.5vw, 7.2rem)",
+              lineHeight: 0.92,
+              maxWidth: "16ch",
+            }}
+          >
+            <span className="text-white block">Точный</span>
+            <span className="text-white block">инжиниринг</span>
+            <span className="text-gold-gradient block">высоко&shy;нагруженных</span>
+            <span className="text-white block">систем.</span>
+          </h1>
 
-            <p className="animate-fade-up delay-200 text-[rgba(255,255,255,0.45)] text-lg leading-relaxed mb-10 font-light max-w-xl">
-              Каждое архитектурное решение — следствие точной причины.
-              Мы проектируем системы, которые не просто работают — они работают
-              безупречно под любой нагрузкой.
-            </p>
+          {/* Sub-headline */}
+          <p
+            className="animate-fade-up delay-200 font-light leading-relaxed mb-14"
+            style={{
+              color: "rgba(255,255,255,0.42)",
+              fontSize: "clamp(1rem, 1.5vw, 1.15rem)",
+              maxWidth: "44ch",
+            }}
+          >
+            Каждое архитектурное решение — следствие точной причины.
+            Проектируем системы, которые работают безупречно
+            под&nbsp;любой нагрузкой.
+          </p>
 
-            <div className="animate-fade-up delay-300 flex flex-col sm:flex-row gap-4">
-              <button className="cta-btn animate-pulse-gold border border-[#D4AF37] px-8 py-4 text-[#D4AF37] text-[13px] tracking-[0.22em] hover:bg-[rgba(212,175,55,0.1)] transition-all duration-300"
-                style={{fontFamily: "'Montserrat', sans-serif", fontWeight: 700}}>
-                НАЧАТЬ ПРОЕКТ
-              </button>
-              <button className="flex items-center gap-3 px-6 py-4 text-[rgba(255,255,255,0.4)] font-mono-brand text-[11px] tracking-[0.2em] hover:text-white transition-colors duration-300 group">
-                <div className="w-10 h-px bg-[rgba(255,255,255,0.2)] group-hover:bg-[#00F2FF] transition-colors duration-300"/>
-                УЗНАТЬ БОЛЬШЕ
-              </button>
-            </div>
+          {/* CTA row */}
+          <div className="animate-fade-up delay-300 flex flex-col sm:flex-row gap-5 items-start">
+            {/* Primary CTA — gold outline, min 44pt height */}
+            <button
+              className="cta-btn group relative overflow-hidden border border-[#D4AF37] min-h-[52px] px-10 text-[#0B0E14] text-[12px] tracking-[0.28em] font-bold transition-all duration-300 active:scale-[0.97]"
+              style={{
+                fontFamily: "'Montserrat', sans-serif",
+                fontWeight: 800,
+                background: "#D4AF37",
+              }}
+              onMouseEnter={e => {
+                (e.currentTarget as HTMLButtonElement).style.background = "#e8c84a";
+                (e.currentTarget as HTMLButtonElement).style.borderColor = "#e8c84a";
+                (e.currentTarget as HTMLButtonElement).style.boxShadow = "0 0 32px rgba(212,175,55,0.35)";
+              }}
+              onMouseLeave={e => {
+                (e.currentTarget as HTMLButtonElement).style.background = "#D4AF37";
+                (e.currentTarget as HTMLButtonElement).style.borderColor = "#D4AF37";
+                (e.currentTarget as HTMLButtonElement).style.boxShadow = "none";
+              }}
+            >
+              НАЧАТЬ ПРОЕКТ
+            </button>
+
+            {/* Secondary CTA — ghost */}
+            <button
+              className="group flex items-center gap-3 min-h-[52px] px-6 font-mono-brand text-[11px] tracking-[0.22em] transition-all duration-300 active:scale-[0.97]"
+              style={{color: "rgba(255,255,255,0.38)"}}
+              onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.color = "rgba(0,242,255,0.9)"; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.color = "rgba(255,255,255,0.38)"; }}
+            >
+              <div className="w-10 h-px bg-current transition-all duration-300"/>
+              УЗНАТЬ БОЛЬШЕ
+            </button>
+          </div>
+
+          {/* Small scroll indicator */}
+          <div className="absolute bottom-10 left-10 xl:left-20 2xl:left-28 flex items-center gap-3 opacity-30">
+            <div className="w-px h-10 bg-[rgba(255,255,255,0.3)]"
+              style={{animation: "pulse-cyan 2s ease-in-out infinite"}}/>
+            <span className="font-mono-brand text-[9px] tracking-[0.3em] text-white/40 [writing-mode:vertical-rl]">SCROLL</span>
           </div>
         </div>
       </section>
@@ -378,50 +439,92 @@ export default function Index() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-px bg-[rgba(212,175,55,0.05)]">
+          <div className="grid md:grid-cols-3 gap-5">
             {services.map((s, i) => (
               <div
                 key={s.number}
-                className="service-card glass-cyan p-8 lg:p-10 cursor-pointer group"
-                style={{ animationDelay: `${i * 0.15}s` }}
+                className="service-card cursor-pointer group relative overflow-hidden p-8 lg:p-10 transition-all duration-500"
+                style={{
+                  animationDelay: `${i * 0.15}s`,
+                  background: "rgba(14,17,26,0.72)",
+                  backdropFilter: "blur(18px) saturate(160%)",
+                  WebkitBackdropFilter: "blur(18px) saturate(160%)",
+                  border: s.accent === "gold"
+                    ? "1px solid rgba(212,175,55,0.12)"
+                    : "1px solid rgba(0,242,255,0.10)",
+                  boxShadow: "0 0 0 0 transparent",
+                }}
+                onMouseEnter={e => {
+                  const el = e.currentTarget as HTMLDivElement;
+                  el.style.border = s.accent === "gold"
+                    ? "1px solid rgba(212,175,55,0.35)"
+                    : "1px solid rgba(0,242,255,0.3)";
+                  el.style.boxShadow = s.accent === "gold"
+                    ? "0 8px 48px rgba(212,175,55,0.08), inset 0 0 40px rgba(212,175,55,0.03)"
+                    : "0 8px 48px rgba(0,242,255,0.07), inset 0 0 40px rgba(0,242,255,0.03)";
+                  el.style.transform = "translateY(-2px)";
+                }}
+                onMouseLeave={e => {
+                  const el = e.currentTarget as HTMLDivElement;
+                  el.style.border = s.accent === "gold"
+                    ? "1px solid rgba(212,175,55,0.12)"
+                    : "1px solid rgba(0,242,255,0.10)";
+                  el.style.boxShadow = "0 0 0 0 transparent";
+                  el.style.transform = "translateY(0)";
+                }}
               >
+                {/* Frosted glass top highlight */}
+                <div className="absolute top-0 left-0 right-0 h-px"
+                  style={{background: s.accent === "gold"
+                    ? "linear-gradient(90deg, transparent, rgba(212,175,55,0.25), transparent)"
+                    : "linear-gradient(90deg, transparent, rgba(0,242,255,0.2), transparent)"}}
+                />
+
+                {/* Watermark number */}
                 <div
-                  className="font-mono-brand text-[64px] leading-none mb-6 select-none"
-                  style={{fontFamily: "'Montserrat', sans-serif", fontWeight: 900, color: "rgba(255,255,255,0.03)"}}>
+                  className="absolute top-5 right-6 select-none"
+                  style={{
+                    fontFamily: "'Montserrat', sans-serif",
+                    fontWeight: 900,
+                    fontSize: "80px",
+                    lineHeight: 1,
+                    color: s.accent === "gold" ? "rgba(212,175,55,0.04)" : "rgba(0,242,255,0.03)",
+                  }}>
                   {s.number}
                 </div>
 
-                <div className={`w-11 h-11 border flex items-center justify-center mb-6 transition-all duration-300 ${
+                {/* Icon */}
+                <div className={`w-12 h-12 border flex items-center justify-center mb-7 transition-all duration-300 ${
                   s.accent === "gold"
-                    ? "border-[rgba(212,175,55,0.25)] group-hover:border-[#D4AF37] group-hover:shadow-[0_0_20px_rgba(212,175,55,0.15)]"
-                    : "border-[rgba(0,242,255,0.25)] group-hover:border-[#00F2FF] group-hover:shadow-[0_0_20px_rgba(0,242,255,0.15)]"
+                    ? "border-[rgba(212,175,55,0.22)] group-hover:border-[rgba(212,175,55,0.6)] group-hover:shadow-[0_0_24px_rgba(212,175,55,0.18)]"
+                    : "border-[rgba(0,242,255,0.22)] group-hover:border-[rgba(0,242,255,0.55)] group-hover:shadow-[0_0_24px_rgba(0,242,255,0.15)]"
                 }`}>
                   <Icon
                     name={s.icon}
-                    size={18}
+                    size={20}
                     className={s.accent === "gold" ? "text-[#D4AF37]" : "text-[#00F2FF]"}
                   />
                 </div>
 
-                <h3 className="text-white text-xl mb-1 tracking-tight"
-                  style={{fontFamily: "'Montserrat', sans-serif", fontWeight: 700}}>
+                <h3 className="text-white mb-1 tracking-tight"
+                  style={{fontFamily: "'Montserrat', sans-serif", fontWeight: 700, fontSize: "1.2rem"}}>
                   {s.title}
                 </h3>
-                <p className="font-mono-brand text-[11px] text-[rgba(255,255,255,0.3)] mb-5 tracking-wide">
+                <p className="font-mono-brand text-[10px] text-[rgba(255,255,255,0.28)] mb-6 tracking-[0.14em] uppercase">
                   {s.subtitle}
                 </p>
-                <p className="text-[rgba(255,255,255,0.5)] text-sm leading-relaxed mb-8 font-light">
+                <p className="text-[rgba(255,255,255,0.48)] text-sm leading-relaxed mb-8 font-light">
                   {s.desc}
                 </p>
 
-                <div className="flex flex-wrap gap-2 mb-8">
+                <div className="flex flex-wrap gap-2 mb-9">
                   {s.tags.map((tag) => (
                     <span
                       key={tag}
-                      className={`font-mono-brand text-[10px] px-3 py-1 border tracking-wider ${
+                      className={`font-mono-brand text-[9px] px-3 py-1.5 tracking-[0.12em] uppercase ${
                         s.accent === "gold"
-                          ? "border-[rgba(212,175,55,0.18)] text-[rgba(212,175,55,0.55)]"
-                          : "border-[rgba(0,242,255,0.18)] text-[rgba(0,242,255,0.55)]"
+                          ? "border border-[rgba(212,175,55,0.15)] text-[rgba(212,175,55,0.5)] bg-[rgba(212,175,55,0.03)]"
+                          : "border border-[rgba(0,242,255,0.15)] text-[rgba(0,242,255,0.5)] bg-[rgba(0,242,255,0.03)]"
                       }`}
                     >
                       {tag}
@@ -429,9 +532,13 @@ export default function Index() {
                   ))}
                 </div>
 
-                <div className="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className={`w-8 h-px ${s.accent === "gold" ? "bg-[#D4AF37]" : "bg-[#00F2FF]"}`}/>
-                  <Icon name="ArrowRight" size={13} className={s.accent === "gold" ? "text-[#D4AF37]" : "text-[#00F2FF]"} />
+                {/* Hover CTA */}
+                <div className="flex items-center gap-3 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-[-4px] group-hover:translate-x-0">
+                  <div className={`h-px flex-grow max-w-[2rem] ${s.accent === "gold" ? "bg-[#D4AF37]" : "bg-[#00F2FF]"}`}/>
+                  <span className={`font-mono-brand text-[10px] tracking-[0.18em] ${s.accent === "gold" ? "text-[#D4AF37]" : "text-[#00F2FF]"}`}>
+                    ПОДРОБНЕЕ
+                  </span>
+                  <Icon name="ArrowRight" size={12} className={s.accent === "gold" ? "text-[#D4AF37]" : "text-[#00F2FF]"} />
                 </div>
               </div>
             ))}

@@ -439,6 +439,94 @@ export default function Index() {
         </div>
       </section>
 
+      {/* ── ИНФОРМАЦИОННАЯ БЕЗОПАСНОСТЬ ── */}
+      <section className="relative border-y border-[rgba(212,175,55,0.07)]">
+        <div className="max-w-7xl mx-auto px-6 py-20">
+
+          {/* Header */}
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-14">
+            <div>
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-10 h-px bg-[#D4AF37]"/>
+                <span className="font-mono-brand text-[11px] tracking-[0.28em] text-[rgba(212,175,55,0.55)] uppercase">Информационная безопасность</span>
+              </div>
+              <h2 style={{fontFamily: "'Montserrat', sans-serif", fontWeight: 900, fontSize: "clamp(1.8rem, 3.5vw, 3rem)"}} className="leading-tight tracking-tight">
+                <span className="text-white">Безопасность —</span><br/>
+                <span className="text-[rgba(255,255,255,0.3)]">не этап. Это процесс.</span>
+              </h2>
+            </div>
+            <p className="text-[rgba(255,255,255,0.4)] text-sm leading-relaxed font-light max-w-sm md:text-right">
+              Встраиваем защиту в архитектуру с первой строки кода.
+              Не добавляем безопасность поверх — строим её внутрь.
+            </p>
+          </div>
+
+          {/* Grid of security stages */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-[rgba(212,175,55,0.05)]">
+            {[
+              {
+                icon: "ScanSearch",
+                stage: "Проектирование",
+                desc: "Threat modeling и анализ поверхности атаки до написания первой строки кода.",
+              },
+              {
+                icon: "Code2",
+                stage: "Разработка",
+                desc: "SAST, проверка зависимостей, code review с фокусом на уязвимости в CI/CD-пайплайне.",
+              },
+              {
+                icon: "FlaskConical",
+                stage: "Тестирование",
+                desc: "Пентест, DAST и нагрузочные атаки перед каждым выходом в продакшн.",
+              },
+              {
+                icon: "Activity",
+                stage: "Эксплуатация",
+                desc: "SIEM-мониторинг, аудит логов, реагирование на инциденты 24/7.",
+              },
+            ].map((item, i) => (
+              <div
+                key={i}
+                className="bg-[#0B0E14] p-7 group hover:bg-[rgba(212,175,55,0.02)] transition-colors duration-300 relative overflow-hidden"
+              >
+                {/* Step number watermark */}
+                <div className="absolute top-3 right-4 font-mono-brand text-[40px] leading-none text-[rgba(212,175,55,0.04)] select-none"
+                  style={{fontFamily: "'Montserrat', sans-serif", fontWeight: 900}}>
+                  {String(i + 1).padStart(2, "0")}
+                </div>
+
+                <div className="w-9 h-9 border border-[rgba(212,175,55,0.2)] flex items-center justify-center mb-5 group-hover:border-[rgba(212,175,55,0.45)] transition-colors duration-300">
+                  <Icon name={item.icon} size={15} className="text-[#D4AF37]" />
+                </div>
+
+                <div className="font-mono-brand text-[10px] tracking-[0.18em] text-[rgba(212,175,55,0.55)] mb-2 uppercase">
+                  {item.stage}
+                </div>
+                <p className="text-[rgba(255,255,255,0.45)] text-[13px] leading-relaxed font-light">
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* Bottom trust line */}
+          <div className="mt-8 flex flex-col sm:flex-row items-center gap-6 pt-6 border-t border-[rgba(255,255,255,0.04)]">
+            {[
+              { icon: "ShieldCheck", text: "152-ФЗ соответствие"          },
+              { icon: "Lock",        text: "Шифрование данных at-rest и in-transit" },
+              { icon: "Eye",         text: "Аудит доступа и ролевая модель"   },
+              { icon: "FileCheck2",  text: "Документирование всех решений по ИБ" },
+            ].map((t) => (
+              <div key={t.text} className="flex items-center gap-2 text-[rgba(255,255,255,0.3)]">
+                <Icon name={t.icon} size={12} className="text-[rgba(0,242,255,0.5)] flex-shrink-0" />
+                <span className="font-mono-brand text-[10px] tracking-[0.08em]">{t.text}</span>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
       {/* ── TECHNICAL KARMA ── */}
       <section id="технология" className="relative py-32 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none flex items-center justify-center">

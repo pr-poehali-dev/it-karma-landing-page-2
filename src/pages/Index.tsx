@@ -39,20 +39,20 @@ function DataFlowDiagram() {
   ];
 
   const chaosNodes = [
-    { cx: 60, cy: 80,  label: "Input"    },
-    { cx: 60, cy: 200, label: "Events"   },
-    { cx: 60, cy: 320, label: "Requests" },
+    { cx: 60, cy: 80,  label: "Ввод"    },
+    { cx: 60, cy: 200, label: "События" },
+    { cx: 60, cy: 320, label: "Запросы" },
   ];
 
   const procNodes = [
-    { cx: 240, cy: 140, label: "Queue"  },
-    { cx: 240, cy: 260, label: "Router" },
+    { cx: 240, cy: 140, label: "Очередь" },
+    { cx: 240, cy: 260, label: "Роутер"  },
   ];
 
   const orderNodes = [
-    { cx: 420, cy: 80,  label: "Cache" },
-    { cx: 420, cy: 200, label: "DB"    },
-    { cx: 420, cy: 320, label: "API"   },
+    { cx: 420, cy: 80,  label: "Кэш" },
+    { cx: 420, cy: 200, label: "БД"  },
+    { cx: 420, cy: 320, label: "API" },
   ];
 
   return (
@@ -80,9 +80,9 @@ function DataFlowDiagram() {
       <rect x="390" y="50" width="60" height="290" rx="2" fill="rgba(0,242,255,0.03)"/>
 
       {/* Zone labels */}
-      <text x="60" y="40" textAnchor="middle" fill="rgba(212,175,55,0.35)" fontSize="9" fontFamily="IBM Plex Mono" letterSpacing="2">CHAOS</text>
-      <text x="420" y="40" textAnchor="middle" fill="rgba(0,242,255,0.35)" fontSize="9" fontFamily="IBM Plex Mono" letterSpacing="2">ORDER</text>
-      <text x="240" y="40" textAnchor="middle" fill="rgba(255,255,255,0.2)" fontSize="9" fontFamily="IBM Plex Mono" letterSpacing="2">PROCESSING</text>
+      <text x="60" y="40" textAnchor="middle" fill="rgba(212,175,55,0.35)" fontSize="9" fontFamily="IBM Plex Mono" letterSpacing="2">ХАОС</text>
+      <text x="420" y="40" textAnchor="middle" fill="rgba(0,242,255,0.35)" fontSize="9" fontFamily="IBM Plex Mono" letterSpacing="2">ПОРЯДОК</text>
+      <text x="240" y="40" textAnchor="middle" fill="rgba(255,255,255,0.2)" fontSize="9" fontFamily="IBM Plex Mono" letterSpacing="2">ОБРАБОТКА</text>
 
       {/* Edges */}
       {edges.map((e, i) => (
@@ -191,28 +191,28 @@ export default function Index() {
     {
       icon: "LineChart",
       number: "01",
-      title: "Consulting",
+      title: "Консалтинг",
       subtitle: "Системный аудит и стратегия",
       desc: "Диагностируем узкие места вашей инфраструктуры. Строим дорожную карту масштабирования с точными метриками и измеримыми результатами.",
-      tags: ["Performance Audit", "Capacity Planning", "SLA Design"],
+      tags: ["Аудит производительности", "Планирование нагрузки", "Проектирование SLA"],
       accent: "gold",
     },
     {
       icon: "Network",
       number: "02",
-      title: "Architecture Design",
+      title: "Проектирование архитектуры",
       subtitle: "Проектирование высоконагруженных систем",
       desc: "Разрабатываем отказоустойчивые распределённые архитектуры. Каждое решение обосновано причинно-следственной логикой — без избыточности, без слабых звеньев.",
-      tags: ["Microservices", "Event-Driven", "Zero-Downtime"],
+      tags: ["Микросервисы", "Событийный подход", "Без простоев"],
       accent: "cyan",
     },
     {
       icon: "Cpu",
       number: "03",
-      title: "AI-Powered Development",
+      title: "ИИ-разработка",
       subtitle: "Разработка с интеграцией ИИ",
-      desc: "Встраиваем AI-компоненты в production-системы. Авторазмасштабирование, предиктивный мониторинг, интеллектуальная балансировка нагрузки.",
-      tags: ["ML Pipelines", "Auto-Scaling", "Predictive Ops"],
+      desc: "Встраиваем ИИ-компоненты в производственные системы. Авторазмасштабирование, предиктивный мониторинг, интеллектуальная балансировка нагрузки.",
+      tags: ["МЛ-пайплайны", "Автомасштабирование", "Предиктивные операции"],
       accent: "gold",
     },
   ];
@@ -234,9 +234,9 @@ export default function Index() {
 
           <div className="hidden md:flex items-center gap-8">
             {[
-              { label: "УСЛУГИ",     href: "#услуги"      },
-              { label: "ТЕХНОЛОГИЯ", href: "#технология"  },
-              { label: "КОНТАКТЫ",   href: "#контакты"    },
+              { label: "УСЛУГИ",      href: "#услуги"     },
+              { label: "ТЕХНОЛОГИЯ",  href: "#технология" },
+              { label: "КОНТАКТЫ",    href: "#контакты"   },
             ].map((item) => (
               <a
                 key={item.label}
@@ -259,7 +259,7 @@ export default function Index() {
         <BgNodes />
 
         <div className="absolute inset-0 z-0">
-          <img src={HERO_IMAGE} alt="Distributed Architecture" className="w-full h-full object-cover opacity-15"/>
+          <img src={HERO_IMAGE} alt="Распределённая архитектура" className="w-full h-full object-cover opacity-15"/>
           <div className="absolute inset-0" style={{background: "linear-gradient(to right, #0B0E14 40%, rgba(11,14,20,0.8) 70%, rgba(11,14,20,0.35) 100%)"}}/>
           <div className="absolute inset-0" style={{background: "linear-gradient(to top, #0B0E14 0%, transparent 40%)"}}/>
         </div>
@@ -273,16 +273,16 @@ export default function Index() {
             <div className="animate-fade-up flex items-center gap-3 mb-8">
               <div className="node-dot-gold"/>
               <span className="font-mono-brand text-[11px] tracking-[0.28em] text-[rgba(212,175,55,0.65)] uppercase">
-                AI-Driven High-Load Systems
+                ИИ-разработка высоконагруженных систем
               </span>
             </div>
 
             <h1 className="animate-fade-up delay-100 leading-[0.93] tracking-[-0.025em] mb-6"
               style={{fontFamily: "'Montserrat', sans-serif", fontWeight: 900, fontSize: "clamp(2.8rem, 6vw, 5.5rem)"}}>
-              <span className="text-white">Precise</span><br/>
-              <span className="text-white">Engineering</span><br/>
-              <span className="text-gold-gradient">for High-Load</span><br/>
-              <span className="text-white">Systems.</span>
+              <span className="text-white">Точный</span><br/>
+              <span className="text-white">инжиниринг</span><br/>
+              <span className="text-gold-gradient">высоконагруженных</span><br/>
+              <span className="text-white">систем.</span>
             </h1>
 
             <p className="animate-fade-up delay-200 text-[rgba(255,255,255,0.45)] text-lg leading-relaxed mb-10 font-light max-w-xl">
@@ -310,10 +310,10 @@ export default function Index() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-[rgba(212,175,55,0.05)]">
             {[
-              { value: `${(uptime / 100).toFixed(2)}%`, label: "Uptime SLA",   sub: "production-систем"  },
-              { value: `${rps}M RPS`,                   label: "Пиковая нагр.", sub: "запросов в секунду" },
-              { value: `${latency}ms`,                  label: "P99 Latency",  sub: "медианная задержка" },
-              { value: `${clients}+`,                   label: "Проектов",     sub: "запущено в prod"    },
+              { value: `${(uptime / 100).toFixed(2)}%`, label: "Аптайм SLA",      sub: "производственных систем"  },
+              { value: `${rps}М зап/с`,                 label: "Пиковая нагрузка", sub: "запросов в секунду"    },
+              { value: `${latency}мс`,                  label: "P99 Задержка",     sub: "медианная задержка"    },
+              { value: `${clients}+`,                   label: "Проектов",         sub: "запущено в продакшн"   },
             ].map((stat, i) => (
               <div key={i} className="bg-[#0B0E14] p-8 md:p-10 text-center">
                 <div className="text-gold-gradient text-3xl md:text-4xl mb-1 tracking-tight"
@@ -335,7 +335,7 @@ export default function Index() {
           <div className="mb-20">
             <div className="flex items-center gap-4 mb-5">
               <div className="w-10 h-px bg-[#D4AF37]"/>
-              <span className="font-mono-brand text-[11px] tracking-[0.28em] text-[rgba(212,175,55,0.55)] uppercase">Services</span>
+              <span className="font-mono-brand text-[11px] tracking-[0.28em] text-[rgba(212,175,55,0.55)] uppercase">Услуги</span>
             </div>
             <h2 style={{fontFamily: "'Montserrat', sans-serif", fontWeight: 900, fontSize: "clamp(2rem, 4vw, 3.5rem)"}} className="leading-tight tracking-tight">
               <span className="text-white">Три вектора</span><br/>
@@ -414,7 +414,7 @@ export default function Index() {
           <div className="mb-20 max-w-2xl">
             <div className="flex items-center gap-4 mb-5">
               <div className="w-10 h-px bg-[#00F2FF]"/>
-              <span className="font-mono-brand text-[11px] tracking-[0.28em] text-[rgba(0,242,255,0.55)] uppercase">Technical Karma</span>
+              <span className="font-mono-brand text-[11px] tracking-[0.28em] text-[rgba(0,242,255,0.55)] uppercase">Техническая карма</span>
             </div>
             <h2 style={{fontFamily: "'Montserrat', sans-serif", fontWeight: 900, fontSize: "clamp(2rem, 4vw, 3.5rem)"}} className="leading-tight tracking-tight mb-6">
               <span className="text-white">Хаос становится</span><br/>
@@ -436,7 +436,7 @@ export default function Index() {
               </div>
               <div className="absolute top-4 right-4 flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-[#00F2FF]" style={{animation: "pulse-cyan 1.5s ease-in-out infinite"}}/>
-                <span className="font-mono-brand text-[10px] text-[rgba(0,242,255,0.45)]">LIVE</span>
+                <span className="font-mono-brand text-[10px] text-[rgba(0,242,255,0.45)]">ВЕЩАНИЕ</span>
               </div>
               <div className="pt-8">
                 <DataFlowDiagram />
@@ -450,7 +450,7 @@ export default function Index() {
                   num: "①",
                   title: "Причина формирует архитектуру",
                   desc: "Бизнес-требования — единственный источник архитектурных решений. Никакой технологии ради технологии.",
-                  metric: "100% requirements traceability",
+                  metric: "100% прослеживаемость требований",
                   accent: "gold",
                 },
                 {
@@ -464,7 +464,7 @@ export default function Index() {
                   num: "③",
                   title: "Масштаб без боли",
                   desc: "Правильная архитектура масштабируется горизонтально без переписывания. Закладываем x100 запас на старте.",
-                  metric: "×100 capacity by design",
+                  metric: "×100 запас мощности изначально",
                   accent: "gold",
                 },
               ].map((p) => (
@@ -516,7 +516,7 @@ export default function Index() {
             <span className="text-white">Готовы к </span>
             <span className="text-gold-gradient">точному</span>
             <br/>
-            <span className="text-white">инженерингу?</span>
+            <span className="text-white">инжинирингу?</span>
           </h2>
 
           <p className="text-[rgba(255,255,255,0.38)] text-lg mb-12 font-light max-w-2xl mx-auto">
@@ -562,13 +562,13 @@ export default function Index() {
           </div>
 
           <p className="font-mono-brand text-[11px] text-[rgba(255,255,255,0.18)] tracking-wide">
-            © 2026 IT-Karma. Precise Engineering for High-Load Systems.
+            © 2026 IT-Karma. Точный инжиниринг высоконагруженных систем.
           </p>
 
           <div className="flex items-center gap-2">
             <div className="w-1.5 h-1.5 rounded-full bg-[#00F2FF]" style={{boxShadow: "0 0 6px #00F2FF", animation: "pulse-cyan 2s ease-in-out infinite"}}/>
             <span className="font-mono-brand text-[10px] text-[rgba(0,242,255,0.35)] tracking-wider">
-              ALL SYSTEMS OPERATIONAL
+              ВСЕ СИСТЕМЫ РАБОТАЮТ
             </span>
           </div>
         </div>

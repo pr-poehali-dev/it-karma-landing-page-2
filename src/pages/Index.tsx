@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import Icon from "@/components/ui/icon";
 
-const HERO_IMAGE = "https://cdn.poehali.dev/projects/4c1eac84-5b55-46d1-a8b3-d6669bf4f714/files/21e7c10d-33ab-414b-8ba9-84844fd8514b.jpg";
+const HERO_IMAGE = "https://cdn.poehali.dev/projects/4c1eac84-5b55-46d1-a8b3-d6669bf4f714/files/dfec4d0b-32e7-4bf2-a54f-8f219218c7f5.jpg";
 
 /* ────────────────────────────────────────────────
    Animated counter hook
